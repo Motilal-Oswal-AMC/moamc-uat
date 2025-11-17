@@ -135,4 +135,32 @@ export default function decorate(block) {
   }
 
   // ... any other decoration code you have ...
+
+  // Find the container that has your special classes
+  const mainbuilding = block.closest('.our-author-detail.moedge-building-container');
+
+  // Only run this pagination logic if we are in the correct block
+  if (mainbuilding) {
+    // Select all the card items
+    const items = Array.from(block.querySelectorAll(':scope > [class*="moedge-build-cont"]'));
+    const itemsPerPage = items.slice(0, 12).length;
+
+    if (items.length > itemsPerPage) {
+      dataMapMoObj.setupPagination(block, items, itemsPerPage);
+    }
+  }
+
+  // Find the container that has your special classes
+  const mainlisting = block.closest('.moedge-list.moedge-building-container');
+
+  // Only run this pagination logic if we are in the correct block
+  if (mainlisting) {
+    // Select all the card items
+    const items = Array.from(block.querySelectorAll(':scope > [class*="moedge-build-cont"]'));
+    const itemsPerPage = items.slice(0, 12).length;
+
+    if (items.length > itemsPerPage) {
+      dataMapMoObj.setupPagination(block, items, itemsPerPage);
+    }
+  }
 }
