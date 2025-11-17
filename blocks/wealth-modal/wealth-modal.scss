@@ -344,6 +344,7 @@
         font-size: 12px;
         line-height: 16px;
         margin: unset;
+        margin-top: 20px;
 
         @include media(mobile) {
           margin-top: 8px;
