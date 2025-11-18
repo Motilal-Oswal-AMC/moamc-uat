@@ -926,6 +926,8 @@ export default async function decorate(block) {
     const prevpage = block.closest('.previous-studies-tab');
     [...prevpage.querySelectorAll('.prev-studies-wrapper .icon-share')].forEach((elemevent) => {
       const dsp = elemevent.parentElement.nextElementSibling;
+      const prev = elemevent.closest('li').previousElementSibling;
+      prev.style.display = 'none';
       if (dsp !== null) {
         dsp.style.display = 'none';
       }
@@ -953,7 +955,7 @@ export default async function decorate(block) {
       const clickedSharePopup = event.target.closest(".share-popup"); // example: your popup div
 
       // If clicked inside share popup or on the icon → do nothing
-      if (clickedShareIcon || clickedSharePopup) return;
+      if (clickedShareIcon || clickedSharePopup || event.target.closest("p")) return;
       // if (event.target.querySelector(".icon-share")) {
         // return false;
       // }
