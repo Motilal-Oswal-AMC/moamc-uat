@@ -36,7 +36,9 @@
 
     @include media(mobile) {
       position: fixed;
-      top: 510px;
+
+      // top: 510px;
+      top: 465px;
       bottom: unset;
     }
   }

@@ -813,7 +813,7 @@ button.swiper-pagination-bullet {
 @media (max-width: 768px) {
   .section.home-banner-container .default-content-wrapper {
     position: fixed;
-    top: 510px;
+    top: 465px;
     bottom: unset;
   }
 }
