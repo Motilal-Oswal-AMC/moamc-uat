@@ -401,7 +401,7 @@ main.nfo-nav .section:first-of-type {
     }
 
     main.nfo-nav .section:first-of-type {
-        margin-top: 58px;
+        margin-top: 56px;
     }
 }
 
@@ -526,7 +526,6 @@ footer .footer[data-block-status="loaded"] {
 }
 
 @media (width <=768px) {
-
     .our-popular-funds>.card-modal-overlay,
     .known-our-funds>.card-modal-overlay {
         position: fixed;
@@ -636,7 +635,6 @@ footer .footer[data-block-status="loaded"] {
 }
 
 @media (width <=768px) {
-
     .our-popular-funds.modal-active-parent,
     .known-our-funds.modal-active-parent {
         max-height: unset;
@@ -1656,7 +1654,7 @@ main>.section.media-coverage {
 }
 
 main.nfo-nav>.section.media-coverage {
-    margin: 60px auto 28px;
+    margin: 57px auto 28px;
 }
 
 main>.section.media-coverage .default-content-wrapper h1,

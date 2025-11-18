@@ -380,11 +380,6 @@
     width: 100%;
   }
 }
-@media (max-width: 768px) {
-  .section.main-wrapper.moedge-article-details .article-right-wrapper .articlesub1 {
-    display: none;
-  }
-}
 .section.main-wrapper.moedge-article-details .article-right-wrapper .articlesub1 .default-content-wrapper.articleitem1 {
   display: flex;
   flex-direction: column;

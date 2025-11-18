@@ -1,12 +1,21 @@
 @import "../../../styles/fonts.css";
+main.nfo-nav .section.decoding-qglp-container {
+  margin-top: 33px;
+}
+@media (max-width: 768px) {
+  main.nfo-nav .section.decoding-qglp-container {
+    margin-top: 0;
+  }
+}
+
 .section .decoding-qglp-wrapper {
   max-width: 1366px;
   width: 100%;
-  margin-top: 73px;
+  padding-top: 40px;
 }
 @media (max-width: 768px) {
   .section .decoding-qglp-wrapper {
-    margin-top: 56px;
+    padding-top: 56px;
   }
 }
 .section .decoding-qglp-wrapper .decoding-qglp {
@@ -30,6 +39,11 @@
   flex-direction: column;
   gap: 12px;
   margin-top: 47px;
+}
+@media (max-width: 768px) {
+  .section .decoding-qglp-wrapper .decoding-qglp .glpcoding1 .glpcoding-inner1 {
+    margin-top: 0;
+  }
 }
 .section .decoding-qglp-wrapper .decoding-qglp .glpcoding1 .glpcoding-inner1 .glpcoding-sub-inner1 {
   margin: 0;
