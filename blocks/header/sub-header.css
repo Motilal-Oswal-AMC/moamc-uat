@@ -38,7 +38,7 @@ header nav[aria-expanded=true] .header-top.header-sub-pms {
   }
 }
 
-/*wealth header*/
+/* wealth header */
 .wealth-header .nav-wrapper {
   padding: 16px;
 }
@@ -62,7 +62,7 @@ header nav[aria-expanded=true] .header-top.header-sub-pms {
 }
 
 .wealth-header .nav-wrapper .nav-brand .navbrand-cont1 .navbrand-sec3 .navbrand-sub2 .navbrand-inner-net1 .icon-wcs-new-logo-golden-logo {
-  /*.icon-header-logo-img2 { */
+  /* .icon-header-logo-img2 { */
   margin-bottom: 14px;
 }
 
@@ -118,8 +118,38 @@ header nav[aria-expanded=true] .header-top.header-sub-pms {
   .wealth-header .nav-sections .nav-sec-sec1 .nav-sec-sub1 {
     display: none;
   }
+}
+@media (width <= 768px) and (max-width: 768px) {
+  .wealth-header .nav-sections .nav-sec-sec1 .nav-drop {
+    padding: 0;
+    line-height: 0;
+  }
+}
+@media (width <= 768px) and (max-width: 768px) {
+  .wealth-header .nav-sections .nav-sec-sec1 .nav-drop .button-container {
+    padding: 0;
+    line-height: 0;
+  }
+}
+@media (width <= 768px) {
   .wealth-header .nav-sections .nav-sec-sec1 .nav-drop.nav-sec-sub2 {
     margin-top: 16px;
+  }
+}
+@media (width <= 768px) and (max-width: 768px) {
+  .wealth-header .nav-sections .nav-sec-sec1 .nav-drop.nav-sec-sub2 {
+    line-height: 0;
+    padding: 0;
+  }
+}
+@media (width <= 768px) and (max-width: 768px) {
+  .wealth-header .nav-sections .nav-sec-sec1 .nav-drop.nav-sec-sub2 p.nav-sec-inner-text1 {
+    line-height: 0;
+  }
+}
+@media (width <= 768px) and (max-width: 768px) {
+  .wealth-header .nav-sections .nav-sec-sec1 .nav-drop.nav-sec-sub2 .nav-sec-inner-text1 {
+    line-height: 0;
   }
 }
 @media (width >= 900px) {

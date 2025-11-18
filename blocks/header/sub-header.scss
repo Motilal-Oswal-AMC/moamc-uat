@@ -159,8 +159,39 @@ header {
         display: none;
     }
 
+    .wealth-header .nav-sections .nav-sec-sec1 .nav-drop {
+        @include media (mobile) {
+            padding: 0;
+            line-height: 0;
+        }
+
+        .button-container {
+            @include media (mobile) {
+                padding: 0;
+                line-height: 0;
+            }
+        }
+    }
+
     .wealth-header .nav-sections .nav-sec-sec1 .nav-drop.nav-sec-sub2 {
         margin-top: 16px;
+
+        @include media (mobile) {
+            line-height: 0;
+            padding: 0;
+        }
+
+        p.nav-sec-inner-text1 {
+            @include media (mobile) {
+                line-height: 0;
+            }
+        }
+
+        .nav-sec-inner-text1 {
+            @include media (mobile) {
+                line-height: 0;
+            }
+        }
     }
 
 }
