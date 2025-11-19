@@ -577,6 +577,7 @@ main>.section.previous-studies-tab.tabs-container {
 }
 
 .default-content-wrapper.annual-wealth-wrap1 {
+
   h1,
   h2,
   h3,
@@ -875,6 +876,7 @@ main>.section.previous-studies-tab.tabs-container {
               background: var(--neutrals-white);
               height: 100px;
               overflow: auto;
+              padding: 2px 6px;
 
               @include media (mobile) {
                 bottom: 27px;
