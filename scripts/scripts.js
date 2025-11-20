@@ -544,6 +544,98 @@ function articleStructure() {
       parent.insertBefore(wrapperDiv, mainArticle1);
       wrapperDiv.appendChild(mainArticle1);
       wrapperDiv.appendChild(mainArticle2);
+      document.querySelectorAll('.comlist.submainart3.itemmainleftart3').forEach((listItem) => {
+
+        const ul = listItem.querySelector('.comlist.submainleftart2');
+        if (!ul) return;
+
+        [...ul.children].forEach((li, index) => {
+          li.classList.add(`listindex${index + 1}`);
+        });
+        // GET SHARE TEXT + URL
+        const popup = listItem.querySelector('.comlist.submainleftart2');
+        const getShareData = () => {
+          const shareUrl = window.location.href;
+          const shareText = listItem.querySelector("h3")?.innerText || "Check this out";
+          return { shareUrl, shareText };
+        };
+
+        // FACEBOOK
+        const fb = popup.querySelector(".listindex1");
+        if (fb) {
+          fb.querySelector('a').removeAttribute('href');
+          fb.addEventListener("click", (e) => {
+            e.stopPropagation();
+            const { shareUrl } = getShareData();
+            const link = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
+            window.open(link, "_blank");
+          });
+        }
+
+        // WHATSAPP
+        const wa = popup.querySelector(".listindex2");
+        if (wa) {
+          wa.querySelector('a').removeAttribute('href');
+          wa.addEventListener("click", (e) => {
+            e.stopPropagation();
+            const { shareUrl, shareText } = getShareData();
+            const link = `https://wa.me/?text=${encodeURIComponent(`${shareText} ${shareUrl}`)}`;
+            window.open(link, "_blank");
+          });
+        }
+
+        // X (TWITTER)
+        const tw = popup.querySelector(".listindex3");
+        if (tw) {
+          tw.querySelector('a').removeAttribute('href');
+          tw.addEventListener("click", (e) => {
+            e.stopPropagation();
+            const { shareUrl, shareText } = getShareData();
+            const link = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
+            window.open(link, "_blank");
+          });
+        }
+
+        // COPY URL
+        // COPY BUTTON (listindex4)
+        const cp = popup.querySelector(".listindex4");
+        const copyPopup = popup.querySelector(".listindex5");
+
+        if (cp && copyPopup) {
+
+          // hide listindex5 initially
+          copyPopup.style.display = "none";
+          copyPopup.style.position = "absolute";
+          copyPopup.style.left = "50%";
+          copyPopup.style.top = "108%";
+          copyPopup.style.transform = "translate(-50%, -50%)";
+          copyPopup.style.zIndex = "999";
+
+          cp.querySelector("a")?.removeAttribute("href");
+
+          cp.addEventListener("click", async (e) => {
+
+            e.stopPropagation();
+
+            try {
+              await navigator.clipboard.writeText(window.location.href);
+
+              // show centered popup (listindex5)
+              copyPopup.style.display = "block";
+
+              // auto-hide after 2 sec
+              setTimeout(() => {
+                copyPopup.style.display = "none";
+              }, 2000);
+
+            } catch (err) {
+              console.log("Copy failed", err);
+            }
+
+          });
+        }
+
+      });
     }
   }
 }
