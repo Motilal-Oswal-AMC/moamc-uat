@@ -212,7 +212,6 @@
   .moedge-building {
     flex-direction: unset;
     flex-wrap: wrap;
-    justify-content: space-between;
     gap: 40px 16px;
   }
   .moedge-building > div {
