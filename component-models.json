@@ -609,6 +609,10 @@
           {
             "name": "Testing",
             "value": "testing"
+          },
+          {
+            "name": "Error Screen",
+            "value": "error-screen"
           }
         ]
       },
