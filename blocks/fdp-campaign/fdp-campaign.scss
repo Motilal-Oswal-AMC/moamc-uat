@@ -95,7 +95,11 @@ $breakpoint-tablet: 900px;
 
 }
 
-
+.section.fdp-campaign-container.investor-banner.listing-investor-banner{
+  @include media(mobile){
+    margin: -26px 16px 0;
+  }
+}
 
 .section.table-wrapper.pws-hero-section.fdp-campaign-container{
     margin: 0;

@@ -69,6 +69,12 @@
   width: 100%;
 }
 
+@media (max-width: 768px) {
+  .section.fdp-campaign-container.investor-banner.listing-investor-banner {
+    margin: -26px 16px 0;
+  }
+}
+
 .section.table-wrapper.pws-hero-section.fdp-campaign-container {
   margin: 0;
   padding: 0;
