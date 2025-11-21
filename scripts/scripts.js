@@ -24,6 +24,7 @@ import formBlock, {
 import {
   initializeModalHandlers,
 } from '../blocks/modal/modal.js';
+import { a } from './dom-helpers.js';
 
 /**
  * Moves all the attributes from a given elmenet to another given element.
@@ -689,3 +690,5 @@ function qglpwcs() {
   }
 }
 dataMapMoObj.qglpwcs = qglpwcs;
+
+

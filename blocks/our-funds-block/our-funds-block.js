@@ -13,6 +13,9 @@ import {
 import dataMapMoObj from '../../scripts/constant.js';
 import fundcardblock from '../fund-card/fund-card.js';
 import listviewblock from '../list-view-card/list-view-card.js';
+import { myAPI } from '../../scripts/scripts.js';
+
+
 
 function dataFilterfun(param) {
   const dataMapObj = {
@@ -843,8 +846,19 @@ export default function decorate(block) {
     el.classList.add('viewlist-btn');
   });
 
+  async function GetFilter() {
+    const resp = await myAPI('GET', 'https://m71vqgw4cj.execute-api.ap-south-1.amazonaws.com/dev/api/public/v1/funds/listing');
+    const respText = await resp;
+    dataMapMoObj.data = dataFilterfun(respText);
+
+    // console.log(resp);
+    return respText;
+  }
+  GetFilter();
+
   dataMapMoObj.selectreturns = '';
-  dataMapMoObj.data = dataFilterfun(dataCfObj.cfDataObjs);
+  // dataMapMoObj.funddata = dataMapMoObj.GetFilter
+  // dataMapMoObj.data = dataFilterfun(dataMapMoObj.GetFilter);
   dataMapMoObj.datatooltip = {};
   Array.from(ullisttoop.children).forEach((tooltip) => {
     const datakey = tooltip.textContent.trim().split(':-');
