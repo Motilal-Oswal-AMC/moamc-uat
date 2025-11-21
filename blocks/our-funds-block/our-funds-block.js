@@ -844,7 +844,7 @@ export default function decorate(block) {
   });
 
   dataMapMoObj.selectreturns = '';
-  dataMapMoObj.data = dataFilterfun(dataCfObj.cfDataObjs);
+  dataMapMoObj.data = dataFilterfun(dataMapMoObj.GetFilter);//(dataCfObj.cfDataObjs);
   dataMapMoObj.datatooltip = {};
   Array.from(ullisttoop.children).forEach((tooltip) => {
     const datakey = tooltip.textContent.trim().split(':-');
