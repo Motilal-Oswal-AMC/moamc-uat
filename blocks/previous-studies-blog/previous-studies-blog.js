@@ -51,5 +51,15 @@ export default async function decorate(block) {
     }
   });
 
-// });
+  const playBtn = document.querySelectorAll('.previous-studies-ctn .tabs-panel .previous-studies-blog-wrapper .icon img');
+  playBtn.forEach((e) => {
+    dataMapMoObj.altFunction(e, 'play-btn-icon');
+  });
+
+  const psCont1 = document.querySelectorAll('.previous-studies-blog-wrapper .previous-studies-blog .ps-in1 .ps-cont1');
+  if (psCont1) {
+    psCont1.forEach((e) => {
+      e.classList.add('ps-cont-plybtn');
+    });
+  }
 }

@@ -747,6 +747,51 @@ export default async function decorate(block) {
     divtab.append(tabList);
     block.prepend(divtab);
   }
+
+  const glossary = block.closest('.glossary-tabs');
+  if (glossary) {
+    // const paragraphs = heroBlock.querySelectorAll('p');
+    // dataMapMoObj.CLASS_PREFIXES = ['tab1', 'tab2',
+    // 'tab3', 'tab4', 'tab5', 'tab6', 'tab7',
+    // 'tab8', 'tab9'];
+    dataMapMoObj.CLASS_PREFIXES = ['tabmain', 'tab-inner', 'tab-subinner', 'tab-child', 'tab-subchild', 'tab-itemmain', 'tab-subitem', 'tab-itemchild', 'tab-iteminner'];
+    dataMapMoObj.addIndexed(block);
+
+    const nextitem = block.closest('.tabs-wrapper').nextElementSibling;
+    dataMapMoObj.CLASS_PREFIXES = ['defitem', 'mainitem', 'inneritem'];
+    dataMapMoObj.addIndexed(nextitem);
+  }
+  // Get all the tab buttons
+  const tabsPreviousStudies1 = document.querySelectorAll('.glossary-tabs .tabs-list .tabs-tab');
+  if (tabsPreviousStudies1) {
+  // Function to handle switching tabs
+    const switchTab = (clickedTab) => {
+    // 1. Remove 'active' and 'aria-selected' from all tabs
+      Array.from(tabsPreviousStudies1).forEach((tab) => {
+        tab.classList.remove('active');
+        tab.setAttribute('aria-selected', 'false');
+      });
+      // 2. Add 'active' and 'aria-selected' to the one you clicked
+      clickedTab.classList.add('active');
+      clickedTab.setAttribute('aria-selected', 'true');
+    };
+    // --- Set Initial State ---
+    // Find the tab that is already selected in your HTML
+    const initialActiveTab = document.querySelector('.tabs-tab[aria-selected="true"]');
+    if (initialActiveTab) {
+      initialActiveTab.classList.add('active');
+    }
+    // --- Add Click Listeners ---
+    // Add a click event listener to each tab
+    Array.from(tabsPreviousStudies1).forEach((tab) => {
+      tab.addEventListener('click', () => {
+      // When a tab is clicked, run the switchTab function
+        switchTab(tab);
+      });
+    });
+  }
+  // previous studies tab end
+
   document.addEventListener('click', (event) => {
     document.querySelectorAll('.cagr-container').forEach((el) => {
       if (!el.contains(event.target)) {
