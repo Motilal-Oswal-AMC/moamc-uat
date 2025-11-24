@@ -255,12 +255,11 @@ export default function decorate(block) {
 
   // Error Screen adding
   const error = block.closest('.section.cards-container');
-  error.classList.add('error-screen-container');
   if (error) {
       const newEle = document.createElement('div');
       newEle.classList.add('errscn-txtwrap')
-      const secondP = document.querySelector('.error-screen-container .cards-card-body p:nth-child(2)');
-      const errscnCont = document.querySelector('.error-screen-container .cards-card-body');
+      const secondP = document.querySelector('.cards-container .cards-card-body p:nth-child(2)');
+      const errscnCont = document.querySelector('.cards-container .cards-card-body');
       errscnCont.append(newEle);
       newEle.append(secondP); 
       dataMapMoObj.CLASS_PREFIXES = ['error-screen-wrapper', 'error-screen-wrap', 'error-screen-ul',  'error-screen-li', 'errscrn-img-cont', 'errscrn-cont', 'errscrn-inner-cont'];
