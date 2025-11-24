@@ -514,6 +514,17 @@ function articleStructure() {
     Array.from(leftSub).forEach((leftel) => {
       leftarticle.append(leftel);
     });
+
+    Array.from(leftSub).forEach((subleft) => {
+      dataMapMoObj.CLASS_PREFIXES = ['investarticle-leftmain', 'investarticle-leftsub', 'investarticle-leftinner', 'investsub-leftarticle', 'investleft-subinner', 'investleft-articleitem', 'investleft-itemchild', 'investleft-subchild'];
+      dataMapMoObj.addIndexed(subleft);
+    });
+
+    Array.from(rightSub).forEach((subright) => {
+      dataMapMoObj.CLASS_PREFIXES = ['investarticle-rightmain', 'investarticle-rightsub', 'investarticle-rightinner', 'investsub-rightarticle', 'investright-subinner', 'investright-articleitem', 'investright-itemchild', 'investright-subchild'];
+      dataMapMoObj.addIndexed(subright);
+    });
+
     if (maincloser.querySelector('.moedge-article-details')) {
       dataMapMoObj.CLASS_PREFIXES = ['articlemain', 'articlesub', 'articleitem',
         'subarticle', 'mainarticle', 'itemarticle', 'itemsubart',
