@@ -476,16 +476,18 @@ export default function decorate(block) {
                   `${planFlowsec}:${cardWrapperSh}`,
                 );
                 let schCard;
-                dataCfObj.cfDataObjs.forEach((el) => {
-                  if (el.schcode === cardWrapperSh) {
-                    schCard = el.schDetail.schemeName.toLowerCase().split(' ').join('-');
+                dataMapMoObj.GetFilter().then((resp) => {
+                  resp.forEach((el) => {
+                    if (el.schcode === cardWrapperSh) {
+                      schCard = el.schDetail.schemeName.toLowerCase().split(' ').join('-');
+                    }
+                  });
+                  if (schCard === undefined) {
+                    window.location.href = `${window.location.origin}/mutual-fund/in/en/our-funds/funds-details-page`;
+                  } else {
+                    window.location.href = `${window.location.origin}/mutual-fund/in/en/our-funds/${schCard}`;
                   }
-                });
-                if (schCard === undefined) {
-                  window.location.href = `${window.location.origin}/mutual-fund/in/en/our-funds/funds-details-page`;
-                } else {
-                  window.location.href = `${window.location.origin}/mutual-fund/in/en/our-funds/${schCard}`;
-                }
+                }).catch((error) => { console.error('Error fetching data:', error); })
               },
             },
             'Know More',

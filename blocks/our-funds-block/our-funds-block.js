@@ -1021,9 +1021,9 @@ export default function decorate(block) {
                 block.querySelector(
                   '.block-subitem2 .block-subitem-finelsub2 span',
                 ),
-              // block.querySelector(
-              //   '.block-subitem2 .block-subitem-finelsub3 span',
-              // ),
+                // block.querySelector(
+                //   '.block-subitem2 .block-subitem-finelsub3 span',
+                // ),
               ),
               div(
                 {
@@ -1288,9 +1288,9 @@ export default function decorate(block) {
                           dataattr: element[Object.keys(element)[0]].join('-'),
                           datakey: Object.keys(element)[0],
                           onclick: (event) => {
-                          // const fundScheme = event.target
-                          //   .getAttribute('dataattr')
-                          //   .split('-');
+                            // const fundScheme = event.target
+                            //   .getAttribute('dataattr')
+                            //   .split('-');
                             if (event.target.closest('.indaneqsub')) {
                               const el = event.target.closest('.indaneqsub');
                               if (el.querySelector('.innerindianequity')) {
@@ -1385,7 +1385,7 @@ export default function decorate(block) {
                       dataattr: element[Object.keys(element)[0]].join('-'),
                       datakey: Object.keys(element)[0],
                       onclick: () => {
-                      // checkfilter(block);
+                        // checkfilter(block);
                         if (window.innerWidth < 786) {
                           const temp = [];
                           const dup = [];
@@ -1410,7 +1410,7 @@ export default function decorate(block) {
                         } else {
                           checkfilter(block);
                         }
-                      // viewFunction(block);
+                        // viewFunction(block);
                       },
                     }),
                     div(
@@ -1832,7 +1832,7 @@ export default function decorate(block) {
                             });
                           }
                           if (el.querySelector('input').checked) {
-                          // const moplabel = el.querySelector('input').nextElementSibling;
+                            // const moplabel = el.querySelector('input').nextElementSibling;
                             if (el.querySelector('input').getAttribute('id') !== 'index1') {
                               if (el.querySelector('input').checked) {
                                 el.querySelector('input').checked = false;
@@ -1846,7 +1846,7 @@ export default function decorate(block) {
                           }
                         });
                         viewFunction(block);
-                      // planListEvent(event,block)
+                        // planListEvent(event,block)
                       },
                     },
                     li('Popular'),
@@ -1944,7 +1944,7 @@ export default function decorate(block) {
                             });
                           }
                           if (el.querySelector('input').checked) {
-                          // const moplabel = el.querySelector('input').nextElementSibling;
+                            // const moplabel = el.querySelector('input').nextElementSibling;
                             if (el.querySelector('input').getAttribute('id') !== 'index1') {
                               if (el.querySelector('input').checked) {
                                 el.querySelector('input').checked = false;
@@ -2071,8 +2071,8 @@ export default function decorate(block) {
                     id: 'toggle',
                     'aria-label': 'Switch between Direct and Regular mode',
                     onclick: () => {
-                    // event.target.checked
-                    // viewFunction(block);
+                      // event.target.checked
+                      // viewFunction(block);
                       checkfilter(block);
                     },
                   }),
@@ -2261,7 +2261,7 @@ export default function decorate(block) {
         dataMapMoObj.tempMobReturn = [];
         dataMapMoObj.tempMobReturn = tempdata;
         dataMapMoObj.selectreturnstemp = event.target.nextSibling.textContent;
-      // viewFunction(block);
+        // viewFunction(block);
       });
     });
     block.querySelectorAll('.arrange-container input')[0].click();
@@ -2295,7 +2295,7 @@ export default function decorate(block) {
           }
         });
       } catch (error) {
-      // console.log(error);
+        // console.log(error);
       }
     });
 
@@ -2308,7 +2308,7 @@ export default function decorate(block) {
             }
           });
         } catch (error) {
-        // console.log(error);
+          // console.log(error);
         }
       });
     }
@@ -2334,5 +2334,10 @@ export default function decorate(block) {
         });
       }
     });
-  });
+  }).catch((error) => {
+    console.error('Error fetching data:', error);
+  })
 }
+
+
+
