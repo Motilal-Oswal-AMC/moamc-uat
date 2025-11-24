@@ -10,6 +10,7 @@ import dataMapMoObj from '../../scripts/constant.js';
 import {
   div, table, thead, tbody, tr, p,
 } from '../../scripts/dom-helpers.js';
+import { createModal } from '../modal/modal.js';
 
 const loadScript = (url, callback, type) => {
   const head = document.querySelector('head');
@@ -171,8 +172,20 @@ export default function decorate(block) {
       wrapper.className = 'embed-placeholder';
       wrapper.innerHTML = '<div class="embed-placeholder-play"><button type="button" title="Play"></button></div>';
       wrapper.prepend(placeholder);
-      wrapper.addEventListener('click', () => {
+      wrapper.addEventListener('click', async (event) => {
+        if (block.closest('.article-left-wrapper')) {
+          //investor atricle detail
+
+          const videoContainer = document.createElement('div');
+          // videoContainer.append(block);
+          loadEmbed(videoContainer, link, true);
+          const { showModal } = await createModal([videoContainer]);
+          showModal();
+          // console.log('df');
+          return false;
+        }
         loadEmbed(block, link, true);
+        return event;
       });
       block.append(wrapper);
     } else {
