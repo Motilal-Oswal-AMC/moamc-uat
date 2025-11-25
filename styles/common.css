@@ -1,7 +1,6 @@
 /*   alpha-value-notation */
 /* media-feature-range-notation */
 @import "../../../styles/fonts.css";
-@import "../blocks/error-screen/error-screen.css";
 .section.download {
   width: 100%;
   max-width: 100%;
@@ -567,6 +566,7 @@ main > .section.previous-studies-tab.tabs-container .tab-dropdown-wrap {
   }
 }
 main > .section.previous-studies-tab.tabs-container .tab-dropdown-wrap .selected-tab {
+  position: relative;
   margin: 0;
   color: #2e2a94;
   font-feature-settings: var(--font-features-default);
@@ -576,10 +576,11 @@ main > .section.previous-studies-tab.tabs-container .tab-dropdown-wrap .selected
   font-weight: 600;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   border-radius: var(--border-radius-8);
   border: var(--border-width-01) solid var(--strokes-default);
   padding: var(--spacing-8) var(--spacing-12);
+  gap: 15px;
 }
 @media (max-width: 768px) {
   main > .section.previous-studies-tab.tabs-container .tab-dropdown-wrap .selected-tab {
@@ -592,6 +593,17 @@ main > .section.previous-studies-tab.tabs-container .tab-dropdown-wrap .selected
   width: 24px;
   height: 24px;
   display: block;
+  position: absolute;
+  right: 16px;
+}
+main > .section.previous-studies-tab.tabs-container .tab-dropdown-wrap .selected-tab .selcontent {
+  position: relative;
+}
+main > .section.previous-studies-tab.tabs-container .tab-dropdown-wrap .selected-tab .selcontent sup {
+  position: absolute;
+  top: -6.5px;
+  left: 100%;
+  font-size: 0.75em;
 }
 main > .section.previous-studies-tab.tabs-container .tab-dropdown-wrap .tab-droplist {
   position: absolute;
@@ -616,6 +628,18 @@ main > .section.previous-studies-tab.tabs-container .tab-dropdown-wrap .tab-drop
   display: flex;
   flex-direction: column;
   gap: 0;
+}
+main > .section.previous-studies-tab.tabs-container .tab-dropdown-wrap .tab-droplist .tabs-list .tabs-tab {
+  position: relative;
+}
+main > .section.previous-studies-tab.tabs-container .tab-dropdown-wrap .tab-droplist .tabs-list .tabs-tab .selcontent {
+  position: relative;
+}
+main > .section.previous-studies-tab.tabs-container .tab-dropdown-wrap .tab-droplist .tabs-list .tabs-tab .selcontent sup {
+  position: absolute;
+  top: -6.5px;
+  left: 100%;
+  font-size: 0.75em;
 }
 
 .prev-studies-wrapper {
@@ -1100,8 +1124,8 @@ main > .section.previous-studies-tab.tabs-container .tab-dropdown-wrap .tab-drop
   width: 712px;
   height: 284px;
   flex-shrink: 0;
-  -o-object-fit: contain;
-     object-fit: contain;
+  -o-object-fit: fill;
+     object-fit: fill;
 }
 @media (max-width: 768px) {
   .prev-main-wrapper .prev-sub .embed div div:first-child p.video-child2 picture.comlist img.picture-child4:last-child {
