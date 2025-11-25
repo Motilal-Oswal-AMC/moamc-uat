@@ -1175,7 +1175,7 @@ main>.section.previous-studies-tab.tabs-container {
                   width: 712px;
                   height: 284px;
                   flex-shrink: 0;
-                  object-fit: contain;
+                  object-fit: fill;
 
                   @include media(mobile) {
                     &:last-child {

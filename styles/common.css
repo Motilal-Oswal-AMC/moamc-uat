@@ -1,6 +1,7 @@
 /*   alpha-value-notation */
 /* media-feature-range-notation */
 @import "../../../styles/fonts.css";
+@import "../blocks/error-screen/error-screen.css";
 .section.download {
   width: 100%;
   max-width: 100%;
@@ -1124,8 +1125,8 @@ main > .section.previous-studies-tab.tabs-container .tab-dropdown-wrap .tab-drop
   width: 712px;
   height: 284px;
   flex-shrink: 0;
-  -o-object-fit: contain;
-     object-fit: contain;
+  -o-object-fit: fill;
+     object-fit: fill;
 }
 @media (max-width: 768px) {
   .prev-main-wrapper .prev-sub .embed div div:first-child p.video-child2 picture.comlist img.picture-child4:last-child {
