@@ -106,6 +106,7 @@
 }
 .section.global-dashboard-container .global-dashboard-wrapper .global-dashboard .global2 .globalsub1 .globalinner1 .globalsubinner1 {
   display: flex;
+  min-width: 86px;
   height: 24px;
   padding: 0 var(--spacing-12);
   align-items: center;
@@ -122,6 +123,7 @@
 }
 @media (max-width: 768px) {
   .section.global-dashboard-container .global-dashboard-wrapper .global-dashboard .global2 .globalsub1 .globalinner1 .globalsubinner1 {
+    min-width: 74px;
     padding: 0 var(--spacing-8);
   }
 }
