@@ -666,6 +666,15 @@ if (skinmoamcComponent != null) {
   dataMapMoObj.addIndexed(skinmoamcComponent);
 }
 
+//Adding custom scrollbar to WCS pages
+try {
+  if (window.location.pathname.includes('/wcs/in/en')) {
+      document.body.classList.add('custom-scroll')
+  };
+} catch (error) {
+  // console.log(error);
+}
+
 try {
   const whymattersComponent = document.querySelector('.why-matters-component');
   if (whymattersComponent != null) {
