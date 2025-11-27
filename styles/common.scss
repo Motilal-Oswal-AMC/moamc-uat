@@ -932,6 +932,8 @@ main>.section.previous-studies-tab.tabs-container {
               height: 100px;
               overflow: auto;
               padding: 2px 6px;
+              scrollbar-width: auto;
+              scrollbar-color: transparent;
 
               @include media (mobile) {
                 bottom: 27px;
@@ -1037,9 +1039,8 @@ main>.section.previous-studies-tab.tabs-container {
       }
 
       @include media(mobile) {
-        // width: 100%;
+        width: 100%;
         height: 160px;
-        width: 340px;
         padding: 0;
       }
     }
@@ -1175,9 +1176,10 @@ main>.section.previous-studies-tab.tabs-container {
 
                   @include media(mobile) {
                     &:last-child {
-                      height: 100%;
-                      margin-top: -2px;
+                      height: 102%;
+                      margin-top: -3px;
                       object-fit: fill;
+                      border-radius: 8px;
                     }
                   }
                 }
