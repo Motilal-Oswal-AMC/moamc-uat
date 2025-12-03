@@ -3,3 +3,4 @@ mountpoints:
     url: "https://author-p143654-e1482275.adobeaemcloud.com/bin/franklin.delivery/Motilal-Oswal-AMC/moamc-uat/main"
     type: "markup"
     suffix: ".html"
+    
